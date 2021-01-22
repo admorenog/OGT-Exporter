@@ -6,9 +6,8 @@ NR==1 {
 	format = "OGT";
 	version ="v0.5";
 	lastPositionInY = 0;
-	imageSize = 1024;
 	printf format";"version";"metadata[1]";"metadata[2]";";
-	for(i=0;i<imageSize-4;i++){
+	for(i=0;i<metadata[1]-4;i++){
 		printf ";";
 	}
 	print "";

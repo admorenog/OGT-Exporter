@@ -14,9 +14,9 @@ NR==1 {
 }
 NR>1{
 	for(idxField=1; idxField<NF; idxField++) {
-		colors["red"] = substr($idxField, 2, 2);
-		colors["green"] = substr($idxField, 4, 2);
-		colors["blue"] = substr($idxField, 6, 2);
+		colors["1"] = substr($idxField, 2, 2);
+		colors["2"] = substr($idxField, 4, 2);
+		colors["3"] = substr($idxField, 6, 2);
 
 		# este formato solo acepta máximo 70 caracteres por línea
 		# son 3 colores y pueden ir hasta 255, que son 3 caracteres
@@ -24,7 +24,7 @@ NR>1{
 		# pixel ocupará como máximo 4 caracteres
 		for(color in colors)
 		{
-			decimalColor = sprintf("%d ", colors[color]);
+			decimalColor = sprintf("%d ", "0x"colors[color]);
 			colorCharSize = length(decimalColor);
 			lineChars = lineChars + colorCharSize;
 			if(lineChars > maxCharsByLine -1) {
